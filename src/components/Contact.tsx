@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { MessageCircle, Mail, Phone, MapPin, Send, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { Reveal } from '@/hooks/useReveal';
+import AmbientBlobs from '@/components/fx/AmbientBlobs';
 import { supabase, type Enquiry } from '@/lib/supabase';
 
 const WHATSAPP_NUMBER = '+919843046611';
@@ -60,21 +61,20 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-plum-800 py-24 lg:py-32">
-      <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-gold-400/8 blur-3xl" />
-      <div className="absolute left-0 bottom-0 h-80 w-80 rounded-full bg-sage-400/10 blur-3xl" />
+    <section id="contact" className="relative overflow-hidden bg-plum-300 py-24 lg:py-32">
+      <AmbientBlobs />
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="text-center">
-          <span className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest-2 text-gold-400">
-            <span className="h-px w-8 bg-gold-400" />
+          <span className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest-2 text-plum-800">
+            <span className="h-px w-8 bg-plum-800" />
             Contact & Enquiry
-            <span className="h-px w-8 bg-gold-400" />
+            <span className="h-px w-8 bg-plum-800" />
           </span>
-          <h2 className="mt-5 font-serif text-3xl font-light leading-tight text-ivory-100 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 font-serif text-3xl font-light leading-tight text-plum-900 sm:text-4xl lg:text-5xl">
             Begin your wellness journey
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-ivory-200/70">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-plum-900/85">
             Reach out with any questions about consultations, speaking engagements,
             or simply to say hello. I'd love to hear from you.
           </p>
@@ -88,57 +88,57 @@ export default function Contact() {
                 href={`https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 rounded-2xl border border-ivory-200/10 bg-plum-700/40 p-5 transition-all duration-300 hover:border-sage-400/40 hover:bg-plum-700/60"
+                className="group flex items-center gap-4 rounded-2xl border border-plum-900/15 bg-white/30 p-5 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-plum-800/40 hover:bg-white/50 hover:shadow-lg hover:shadow-plum-900/10"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sage-500/20 transition-colors duration-300 group-hover:bg-sage-500/30">
-                  <MessageCircle className="h-5 w-5 text-sage-300" strokeWidth={1.5} />
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/40 transition-colors duration-300 group-hover:bg-white/60">
+                  <MessageCircle className="h-5 w-5 text-plum-800" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-ivory-200/50">WhatsApp</p>
-                  <p className="text-sm font-medium text-ivory-100">Chat with me directly</p>
+                  <p className="text-xs uppercase tracking-wider text-plum-900/85">WhatsApp</p>
+                  <p className="text-sm font-medium text-plum-900">Chat with me directly</p>
                 </div>
               </a>
 
               <a
                 href={`mailto:${EMAIL}`}
-                className="group flex items-center gap-4 rounded-2xl border border-ivory-200/10 bg-plum-700/40 p-5 transition-all duration-300 hover:border-gold-400/40 hover:bg-plum-700/60"
+                className="group flex items-center gap-4 rounded-2xl border border-plum-900/15 bg-white/30 p-5 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-plum-800/40 hover:bg-white/50 hover:shadow-lg hover:shadow-plum-900/10"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-400/15 transition-colors duration-300 group-hover:bg-gold-400/25">
-                  <Mail className="h-5 w-5 text-gold-400" strokeWidth={1.5} />
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/40 transition-colors duration-300 group-hover:bg-white/60">
+                  <Mail className="h-5 w-5 text-plum-800" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-ivory-200/50">Email</p>
-                  <p className="text-sm font-medium text-ivory-100">{EMAIL}</p>
+                  <p className="text-xs uppercase tracking-wider text-plum-900/85">Email</p>
+                  <p className="text-sm font-medium text-plum-900">{EMAIL}</p>
                 </div>
               </a>
 
               <a
                 href={`tel:${WHATSAPP_NUMBER.replace(/[^0-9+]/g, '')}`}
-                className="group flex items-center gap-4 rounded-2xl border border-ivory-200/10 bg-plum-700/40 p-5 transition-all duration-300 hover:border-gold-400/40 hover:bg-plum-700/60"
+                className="group flex items-center gap-4 rounded-2xl border border-plum-900/15 bg-white/30 p-5 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-plum-800/40 hover:bg-white/50 hover:shadow-lg hover:shadow-plum-900/10"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-400/15 transition-colors duration-300 group-hover:bg-gold-400/25">
-                  <Phone className="h-5 w-5 text-gold-400" strokeWidth={1.5} />
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/40 transition-colors duration-300 group-hover:bg-white/60">
+                  <Phone className="h-5 w-5 text-plum-800" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-ivory-200/50">Phone</p>
-                  <p className="text-sm font-medium text-ivory-100">{PHONE_DISPLAY}</p>
+                  <p className="text-xs uppercase tracking-wider text-plum-900/85">Phone</p>
+                  <p className="text-sm font-medium text-plum-900">{PHONE_DISPLAY}</p>
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 rounded-2xl border border-ivory-200/10 bg-plum-700/40 p-5">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sage-500/20">
-                  <MapPin className="h-5 w-5 text-sage-300" strokeWidth={1.5} />
+              <div className="flex items-center gap-4 rounded-2xl border border-plum-900/15 bg-white/30 p-5">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/40">
+                  <MapPin className="h-5 w-5 text-plum-800" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-ivory-200/50">Location</p>
-                  <p className="text-sm font-medium text-ivory-100">Coimbatore, India</p>
-                  <p className="mt-0.5 text-xs text-ivory-200/50">Serving clients globally online</p>
+                  <p className="text-xs uppercase tracking-wider text-plum-900/85">Location</p>
+                  <p className="text-sm font-medium text-plum-900">Coimbatore, India</p>
+                  <p className="mt-0.5 text-xs text-plum-900/85">Serving clients globally online</p>
                 </div>
               </div>
 
-              <div className="mt-auto rounded-2xl border border-gold-400/20 bg-gold-400/5 p-5">
-                <p className="flex items-start gap-2 text-xs leading-relaxed text-ivory-200/60">
-                  <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" strokeWidth={1.5} />
+              <div className="mt-auto rounded-2xl border border-plum-800/20 bg-white/30 p-5">
+                <p className="flex items-start gap-2 text-xs leading-relaxed text-plum-900/85">
+                  <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-plum-800" strokeWidth={1.5} />
                   <span>
                     This form is for general enquiries only. If you are in crisis or
                     need urgent medical help, please contact a qualified medical
@@ -154,8 +154,8 @@ export default function Contact() {
             <div className="rounded-3xl bg-ivory-100 p-8 shadow-2xl shadow-plum-900/20 lg:p-10">
               {status === 'success' ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-sage-100">
-                    <CheckCircle2 className="h-8 w-8 text-sage-600" strokeWidth={1.5} />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-lavender-100">
+                    <CheckCircle2 className="h-8 w-8 text-lavender-600" strokeWidth={1.5} />
                   </div>
                   <h3 className="mt-6 font-serif text-2xl font-light text-plum-800">
                     Thank you for reaching out
@@ -166,7 +166,7 @@ export default function Contact() {
                   </p>
                   <button
                     onClick={() => setStatus('idle')}
-                    className="mt-8 rounded-full border border-plum-700 px-6 py-3 text-sm font-semibold text-plum-800 transition-colors hover:bg-plum-800 hover:text-ivory-100"
+                    className="btn-soft mt-8 rounded-full border border-plum-700 px-6 py-3 text-sm font-semibold text-plum-800 hover:bg-plum-800 hover:text-white"
                   >
                     Send another enquiry
                   </button>
@@ -270,7 +270,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-plum-800 px-8 py-4 text-base font-semibold text-ivory-100 transition-all duration-300 hover:bg-plum-900 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                    className="btn-3d group inline-flex w-full items-center justify-center gap-2 rounded-full bg-plum-800 px-8 py-4 text-base font-semibold text-white hover:bg-plum-900 disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
                   >
                     {status === 'submitting' ? 'Sending...' : 'Send Enquiry'}
                     {status !== 'submitting' && (

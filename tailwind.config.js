@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Lavender Field palette — Lilac mist #F4F0FA, Lavender #B8A7DB,
-        // Deep lavender #6B5A9E, Plum #3E3563, Leaf #CFE3C4
+        // Full Lavender palette — everything derives from Lavender #B8A7DB
+        // (plum-300 / gold-400 / lavender-400), with lilac tints and deep plum for text
         plum: {
           50: '#F4F0FA',
           100: '#EAE4F5',
@@ -31,25 +31,27 @@ export default {
           800: '#3E3563',
           900: '#332B53',
         },
-        sage: {
-          50: '#F5F9F2',
-          100: '#E8F1E2',
-          200: '#CFE3C4',
-          300: '#B5D2A6',
-          400: '#97BB85',
-          500: '#7A9E69',
-          600: '#5E8050',
-          700: '#4A6640',
-          800: '#3A5033',
-          900: '#2B3A26',
+        lavender: {
+          50: '#F6F3FB',
+          100: '#EDE8F6',
+          200: '#DDD4EE',
+          300: '#CABEE5',
+          400: '#B8A7DB',
+          500: '#9D8BCB',
+          600: '#7A68AE',
+          700: '#5F4F92',
+          800: '#4A3E75',
+          900: '#332B53',
         },
+        // Backgrounds — Mint #F5FAF1 (50 = raised cards/inputs);
+        // 300–500 are lavender tints for borders & hovers
         ivory: {
-          50: '#FAF8FD',
-          100: '#F4F0FA',
-          200: '#EDE7F6',
-          300: '#E2DAF0',
-          400: '#D3C8E8',
-          500: '#C2B4DF',
+          50: '#FDFEFB',
+          100: '#F5FAF1',
+          200: '#E8F1E0',
+          300: '#DDD4EE',
+          400: '#CABEE5',
+          500: '#B8A7DB',
         },
         ink: '#2E2748',
       },
@@ -62,8 +64,8 @@ export default {
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-out forwards',
-        'fade-up': 'fadeUp 0.8s ease-out forwards',
-        'fade-down': 'fadeDown 0.8s ease-out forwards',
+        'fade-up': 'fadeUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        'fade-down': 'fadeDown 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards',
         'scale-in': 'scaleIn 0.6s ease-out forwards',
         'float-slow': 'floatSlow 6s ease-in-out infinite',
         'shimmer': 'shimmer 3s ease-in-out infinite',

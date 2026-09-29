@@ -1,5 +1,7 @@
 import { Quote } from 'lucide-react';
 import { Reveal } from '@/hooks/useReveal';
+import TiltCard from '@/components/fx/TiltCard';
+import AmbientBlobs from '@/components/fx/AmbientBlobs';
 
 const testimonials = [
   {
@@ -21,16 +23,15 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative overflow-hidden bg-sage-50 py-24 lg:py-32">
-      <div className="absolute left-0 top-20 h-72 w-72 rounded-full bg-gold-400/5 blur-3xl" />
-      <div className="absolute right-0 bottom-20 h-96 w-96 rounded-full bg-sage-300/20 blur-3xl" />
+    <section id="testimonials" className="relative overflow-hidden bg-lavender-50 py-24 lg:py-32">
+      <AmbientBlobs tone="light" />
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="text-center">
-          <span className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest-2 text-sage-600">
-            <span className="h-px w-8 bg-sage-500" />
+          <span className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest-2 text-lavender-600">
+            <span className="h-px w-8 bg-lavender-500" />
             Testimonials
-            <span className="h-px w-8 bg-sage-500" />
+            <span className="h-px w-8 bg-lavender-500" />
           </span>
           <h2 className="mt-5 font-serif text-3xl font-light leading-tight text-plum-800 sm:text-4xl lg:text-5xl">
             Stories of transformation
@@ -43,18 +44,20 @@ export default function Testimonials() {
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <Reveal key={i} delay={i * 100}>
-              <figure className="group flex h-full flex-col rounded-3xl border border-sage-200/60 bg-ivory-100 p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-sage-900/10 hover:-translate-y-1">
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-sage-100 transition-colors duration-300 group-hover:bg-gold-400/15">
-                  <Quote className="h-5 w-5 text-sage-600 transition-colors duration-300 group-hover:text-gold-500" strokeWidth={1.5} />
+              <TiltCard className="rounded-3xl" max={4}>
+              <figure className="group flex h-full flex-col rounded-3xl border border-lavender-200/60 bg-ivory-50 p-8 shadow-sm">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-lavender-100 transition-colors duration-300 group-hover:bg-gold-400/15">
+                  <Quote className="h-5 w-5 text-lavender-600 transition-colors duration-300 group-hover:text-gold-500" strokeWidth={1.5} />
                 </div>
                 <blockquote className="flex-1 text-base leading-relaxed text-ink/75">
                   "{t.text}"
                 </blockquote>
-                <figcaption className="mt-6 border-t border-sage-200/60 pt-5">
+                <figcaption className="mt-6 border-t border-lavender-200/60 pt-5">
                   <p className="font-serif text-lg font-medium text-plum-800">{t.name}</p>
-                  <p className="mt-0.5 text-xs uppercase tracking-wider text-sage-600">{t.role}</p>
+                  <p className="mt-0.5 text-xs uppercase tracking-wider text-lavender-600">{t.role}</p>
                 </figcaption>
               </figure>
+              </TiltCard>
             </Reveal>
           ))}
         </div>

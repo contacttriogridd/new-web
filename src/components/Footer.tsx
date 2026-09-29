@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Instagram, FileText, X } from 'lucide-react';
 import Logo from '@/components/Logo';
+import AmbientBlobs from '@/components/fx/AmbientBlobs';
 
 type LegalPage = 'privacy' | 'terms' | 'cancellation' | 'refund' | null;
 
@@ -114,23 +115,24 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="relative overflow-hidden bg-plum-900 text-ivory-200">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
+      <footer className="relative overflow-hidden bg-plum-300 text-plum-900">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-plum-800/40 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           {/* CTA banner */}
-          <div className="mb-14 flex flex-col items-center gap-6 rounded-3xl border border-gold-400/20 bg-plum-800/50 px-6 py-10 text-center lg:flex-row lg:justify-between lg:px-12 lg:text-left">
-            <div>
-              <h3 className="font-serif text-2xl font-light text-ivory-100 sm:text-3xl">
+          <div className="relative mb-14 flex flex-col items-center gap-6 overflow-hidden rounded-3xl border border-plum-800/20 bg-white/30 px-6 py-10 text-center shadow-lg shadow-plum-900/10 lg:flex-row lg:justify-between lg:px-12 lg:text-left">
+            <AmbientBlobs />
+            <div className="relative">
+              <h3 className="font-serif text-2xl font-light text-plum-900 sm:text-3xl">
                 Ready to align your mind, body and soul?
               </h3>
-              <p className="mt-2 text-sm text-ivory-200/60">
+              <p className="mt-2 text-sm text-plum-900/85">
                 Your journey to lasting wellness starts with a single conversation.
               </p>
             </div>
             <a
               href="#contact"
-              className="shrink-0 rounded-full bg-gold-400 px-8 py-4 text-sm font-semibold text-plum-900 transition-all duration-300 hover:bg-gold-300 hover:shadow-lg hover:shadow-gold-400/25"
+              className="btn-3d shrink-0 rounded-full bg-plum-800 px-8 py-4 text-sm font-semibold text-white hover:bg-plum-900"
             >
               Enquire Now
             </a>
@@ -141,17 +143,17 @@ export default function Footer() {
               <div className="flex items-center">
                 <Logo variant="light" className="h-12 w-auto" />
               </div>
-              <p className="mt-4 max-w-xs text-sm leading-relaxed text-ivory-200/60">
+              <p className="mt-4 max-w-xs text-sm leading-relaxed text-plum-900/85">
                 Integrative Nutrition Health Coach specialising in gut and hormone
                 health. Aligning mind, body and soul for lasting wellness.
               </p>
-              <p className="mt-4 font-serif text-base italic text-gold-400">
+              <p className="mt-4 font-serif text-base italic text-plum-800">
                 "Happy inside is healthy outside"
               </p>
             </div>
 
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-gold-400">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-plum-800">
                 Quick Links
               </h4>
               <ul className="mt-4 space-y-2.5">
@@ -165,7 +167,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="text-sm text-ivory-200/60 transition-colors hover:text-gold-400"
+                      className="link-underline text-sm text-plum-900/85 hover:text-plum-950"
                     >
                       {link.label}
                     </a>
@@ -175,7 +177,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-gold-400">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-plum-800">
                 Legal & Policies
               </h4>
               <ul className="mt-4 space-y-2.5">
@@ -183,7 +185,7 @@ export default function Footer() {
                   <li key={link.key}>
                     <button
                       onClick={() => setActiveLegal(link.key)}
-                      className="inline-flex items-center gap-2 text-sm text-ivory-200/60 transition-colors hover:text-gold-400"
+                      className="group inline-flex items-center gap-2 text-sm text-plum-900/85 transition-colors hover:text-plum-950"
                     >
                       <FileText className="h-3.5 w-3.5" strokeWidth={1.5} />
                       {link.label}
@@ -195,7 +197,7 @@ export default function Footer() {
                 href="https://instagram.com/nisha.d.singla"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-ivory-200/15 text-ivory-200/60 transition-all duration-300 hover:border-gold-400/40 hover:text-gold-400"
+                className="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-plum-900/20 text-plum-900/85 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-plum-800/40 hover:bg-white/30 hover:text-plum-950"
                 aria-label="Instagram"
               >
                 <Instagram className="h-4 w-4" strokeWidth={1.5} />
@@ -203,11 +205,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-ivory-200/10 pt-8 sm:flex-row">
-            <p className="text-xs text-ivory-200/40">
+          <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-plum-900/15 pt-8 sm:flex-row">
+            <p className="text-xs text-plum-900/85">
               &copy; {new Date().getFullYear()} Nisha Singla. All rights reserved.
             </p>
-            <p className="text-xs text-ivory-200/40">
+            <p className="text-xs text-plum-900/85">
               Coimbatore, India &middot; Serving clients globally
             </p>
           </div>

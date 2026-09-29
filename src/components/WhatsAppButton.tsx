@@ -44,7 +44,7 @@ export default function WhatsAppButton() {
             href={`https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}?text=${WHATSAPP_MESSAGE}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 flex items-center justify-center gap-2 rounded-full bg-sage-200 px-4 py-2.5 text-sm font-semibold text-plum-800 transition-colors hover:bg-sage-300"
+            className="mt-3 flex items-center justify-center gap-2 rounded-full bg-lavender-200 px-4 py-2.5 text-sm font-semibold text-plum-800 transition-colors hover:bg-lavender-300"
           >
             <MessageCircle className="h-4 w-4" strokeWidth={1.5} />
             Start Chat
@@ -53,7 +53,7 @@ export default function WhatsAppButton() {
       )}
       <button
         onClick={() => setExpanded((v) => !v)}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-sage-200 text-plum-800 shadow-xl shadow-plum-900/20 transition-all duration-300 hover:bg-sage-300 hover:scale-105"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-lavender-200 text-plum-800 shadow-xl shadow-plum-900/20 transition-all duration-300 hover:bg-lavender-300 hover:scale-105"
         aria-label="WhatsApp"
       >
         {expanded ? (

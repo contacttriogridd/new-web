@@ -14,6 +14,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { Reveal } from '@/hooks/useReveal';
+import AmbientBlobs from '@/components/fx/AmbientBlobs';
 
 const corporateImage =
   'https://images.pexels.com/photos/8761541/pexels-photo-8761541.jpeg?auto=compress&cs=tinysrgb&w=900';
@@ -41,12 +42,13 @@ const speakingRoles = [
 export default function Services() {
   return (
     <section id="services" className="relative overflow-hidden bg-ivory-200/50 py-24 lg:py-32">
+      <AmbientBlobs tone="light" />
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="text-center">
-          <span className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest-2 text-sage-600">
-            <span className="h-px w-8 bg-sage-500" />
+          <span className="inline-flex items-center gap-3 text-sm font-medium uppercase tracking-widest-2 text-lavender-600">
+            <span className="h-px w-8 bg-lavender-500" />
             Services
-            <span className="h-px w-8 bg-sage-500" />
+            <span className="h-px w-8 bg-lavender-500" />
           </span>
           <h2 className="mt-5 font-serif text-3xl font-light leading-tight text-plum-800 sm:text-4xl lg:text-5xl">
             How we can work together
@@ -59,26 +61,26 @@ export default function Services() {
 
         {/* Private Consultations — Primary */}
         <Reveal delay={100}>
-          <div className="mt-16 overflow-hidden rounded-3xl bg-plum-800 shadow-2xl shadow-plum-900/20">
+          <div className="group/card relative mt-16 overflow-hidden rounded-3xl bg-plum-300 shadow-2xl shadow-plum-900/20">
             <div className="grid lg:grid-cols-5">
               <div className="relative lg:col-span-2 min-h-[280px] lg:min-h-full">
                 <img
                   src="https://images.pexels.com/photos/6958062/pexels-photo-6958062.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Calm yoga pose in natural light"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/card:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-plum-900/80 via-plum-800/30 to-transparent lg:bg-gradient-to-r" />
+                <div className="absolute inset-0 bg-gradient-to-t from-plum-300/80 via-plum-300/30 to-transparent lg:bg-gradient-to-r" />
               </div>
 
               <div className="p-8 lg:col-span-3 lg:p-12">
-                <span className="inline-flex items-center gap-2 rounded-full bg-gold-400/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold-400">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-plum-800">
                   Primary Service
                 </span>
-                <h3 className="mt-5 font-serif text-2xl font-light text-ivory-100 sm:text-3xl lg:text-4xl">
+                <h3 className="mt-5 font-serif text-2xl font-light text-plum-900 sm:text-3xl lg:text-4xl">
                   Private 1-on-1 Consultations
                 </h3>
-                <p className="mt-4 text-base leading-relaxed text-ivory-200/70">
+                <p className="mt-4 text-base leading-relaxed text-plum-900/85">
                   A personalised wellness journey designed around your unique needs.
                   We'll work together on gut health, hormone balance, nutrition and
                   mental wellbeing — aligning your mind, body and soul for lasting
@@ -89,47 +91,47 @@ export default function Services() {
                   {consultationFeatures.map((feat) => (
                     <div
                       key={feat.label}
-                      className="rounded-2xl border border-ivory-200/10 bg-plum-700/40 p-4"
+                      className="rounded-2xl border border-plum-900/15 bg-white/30 p-4"
                     >
-                      <feat.icon className="h-6 w-6 text-gold-400" strokeWidth={1.5} />
-                      <p className="mt-3 text-sm font-semibold text-ivory-100">{feat.label}</p>
-                      <p className="mt-1 text-xs leading-relaxed text-ivory-200/50">{feat.desc}</p>
+                      <feat.icon className="h-6 w-6 text-plum-800" strokeWidth={1.5} />
+                      <p className="mt-3 text-sm font-semibold text-plum-900">{feat.label}</p>
+                      <p className="mt-1 text-xs leading-relaxed text-plum-900/85">{feat.desc}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-8 flex flex-wrap items-center gap-6 border-t border-ivory-200/10 pt-6">
-                  <div className="flex items-center gap-2 text-ivory-200/70">
-                    <Clock className="h-5 w-5 text-gold-400" strokeWidth={1.5} />
+                <div className="mt-8 flex flex-wrap items-center gap-6 border-t border-plum-900/15 pt-6">
+                  <div className="flex items-center gap-2 text-plum-900/85">
+                    <Clock className="h-5 w-5 text-plum-800" strokeWidth={1.5} />
                     <span className="text-sm">60 or 90-minute sessions</span>
                   </div>
-                  <div className="flex items-center gap-2 text-ivory-200/70">
-                    <Calendar className="h-5 w-5 text-gold-400" strokeWidth={1.5} />
+                  <div className="flex items-center gap-2 text-plum-900/85">
+                    <Calendar className="h-5 w-5 text-plum-800" strokeWidth={1.5} />
                     <span className="text-sm">Mon–Fri, 9am–4pm IST</span>
                   </div>
                 </div>
 
-                <div className="mt-6 rounded-2xl bg-gold-400/10 px-6 py-4">
-                  <p className="text-sm text-ivory-200/80">
-                    <span className="font-semibold text-gold-400">Starting from</span>{' '}
-                    <span className="font-serif text-2xl font-light text-gold-400">
+                <div className="mt-6 rounded-2xl bg-white/40 px-6 py-4">
+                  <p className="text-sm text-plum-900/85">
+                    <span className="font-semibold text-plum-800">Starting from</span>{' '}
+                    <span className="font-serif text-2xl font-light text-plum-800">
                       ₹[X]
                     </span>
-                    <span className="ml-2 text-xs text-ivory-200/50">
+                    <span className="ml-2 text-xs text-plum-900/85">
                       (fee to be confirmed)
                     </span>
                   </p>
                 </div>
 
                 <div className="mt-6">
-                  <p className="mb-3 text-xs uppercase tracking-wider text-ivory-200/50">
+                  <p className="mb-3 text-xs uppercase tracking-wider text-plum-900/85">
                     Book your session via
                   </p>
                   <div className="flex flex-wrap gap-3">
                     {bookingOptions.map((opt) => (
                       <span
                         key={opt.label}
-                        className="inline-flex items-center gap-2 rounded-full border border-ivory-200/15 px-4 py-2 text-sm text-ivory-200/80 transition-colors hover:border-gold-400/40 hover:text-gold-400"
+                        className="inline-flex items-center gap-2 rounded-full border border-plum-900/20 px-4 py-2 text-sm text-plum-900/85 transition-colors hover:border-plum-800/40 hover:text-plum-950"
                       >
                         <opt.icon className="h-4 w-4" strokeWidth={1.5} />
                         {opt.label}
@@ -140,7 +142,7 @@ export default function Services() {
 
                 <a
                   href="#contact"
-                  className="group mt-8 inline-flex items-center gap-2 rounded-full bg-gold-400 px-7 py-3.5 text-sm font-semibold text-plum-900 transition-all duration-300 hover:bg-gold-300 hover:shadow-lg hover:shadow-gold-400/25"
+                  className="btn-3d group mt-8 inline-flex items-center gap-2 rounded-full bg-plum-800 px-7 py-3.5 text-sm font-semibold text-white hover:bg-plum-900"
                 >
                   Enquire Now
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -152,10 +154,10 @@ export default function Services() {
 
         {/* Corporate & Speaking — Secondary */}
         <Reveal delay={150}>
-          <div className="mt-8 overflow-hidden rounded-3xl border border-sage-200/60 bg-ivory-100 shadow-lg shadow-sage-900/5">
+          <div className="mt-8 overflow-hidden rounded-3xl border border-lavender-200/60 bg-ivory-50 shadow-lg shadow-lavender-900/5">
             <div className="grid lg:grid-cols-5">
               <div className="p-8 lg:col-span-3 lg:p-12">
-                <span className="inline-flex items-center gap-2 rounded-full bg-sage-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-sage-700">
+                <span className="inline-flex items-center gap-2 rounded-full bg-lavender-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-lavender-700">
                   Speaking & Corporate
                 </span>
                 <h3 className="mt-5 font-serif text-2xl font-light text-plum-800 sm:text-3xl">
@@ -171,9 +173,9 @@ export default function Services() {
                   {speakingRoles.map((role) => (
                     <div
                       key={role.label}
-                      className="flex items-center gap-3 rounded-xl border border-sage-200/60 bg-sage-50/50 px-4 py-3.5 transition-all duration-300 hover:border-gold-400/40 hover:bg-gold-50/30"
+                      className="flex items-center gap-3 rounded-xl border border-lavender-200/60 bg-lavender-50/50 px-4 py-3.5 transition-all duration-300 hover:border-gold-400/40 hover:bg-gold-50/30"
                     >
-                      <role.icon className="h-5 w-5 shrink-0 text-sage-600" strokeWidth={1.5} />
+                      <role.icon className="h-5 w-5 shrink-0 text-lavender-600" strokeWidth={1.5} />
                       <span className="text-sm font-medium text-plum-800">{role.label}</span>
                     </div>
                   ))}
@@ -181,7 +183,7 @@ export default function Services() {
 
                 <a
                   href="#contact"
-                  className="group mt-8 inline-flex items-center gap-2 rounded-full border border-plum-700 px-7 py-3.5 text-sm font-semibold text-plum-800 transition-all duration-300 hover:bg-plum-800 hover:text-ivory-100"
+                  className="btn-soft group mt-8 inline-flex items-center gap-2 rounded-full border border-plum-700 px-7 py-3.5 text-sm font-semibold text-plum-800 hover:bg-plum-800 hover:text-white"
                 >
                   Enquire Now
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
