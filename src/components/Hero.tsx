@@ -1,17 +1,19 @@
 import { ArrowRight, Phone } from 'lucide-react';
 import HeroRotator from './HeroRotator';
 import HeroVisual from '@/components/hero/HeroVisual';
+import HeroBackdrop from '@/components/hero/HeroBackdrop';
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-plum-300"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[radial-gradient(circle_at_50%_10%,#d7c9eb_0%,#b8a7db_46%,#a898ce_100%)]"
     >
+      <HeroBackdrop />
       <div className="absolute inset-0">
-        <HeroRotator className="opacity-25" showDots={false} />
-        <div className="absolute inset-0 bg-gradient-to-r from-plum-300 via-plum-300/90 to-plum-300/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-plum-300 via-transparent to-plum-300/40" />
+        <HeroRotator className="opacity-[0.08] mix-blend-soft-light" showDots={false} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#b8a7db]/75 via-[#b8a7db]/35 to-[#b8a7db]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#a898ce]/80 via-transparent to-white/10" />
       </div>
 
       <div className="ambient-blob right-8 top-32 hidden h-72 w-72 bg-white/30 lg:block" style={{ animationDuration: '30s' }} />
@@ -30,9 +32,8 @@ export default function Hero() {
             className="mt-6 animate-fade-up font-serif text-4xl font-light leading-[1.15] text-plum-900 text-balance sm:text-5xl lg:text-6xl xl:text-7xl"
             style={{ animationDelay: '0.15s', opacity: 0 }}
           >
-            Happy inside is
-            <br />
-            <span className="italic text-plum-800">healthy outside</span>
+            <span className="hero-title-line">Happy inside is</span>
+            <span className="hero-title-line hero-title-line--accent italic text-plum-800">healthy outside</span>
           </h1>
 
           <p

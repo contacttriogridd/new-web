@@ -61,7 +61,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-plum-300 py-24 lg:py-32">
+    <section id="contact" className="relative overflow-hidden bg-plum-300/78 py-24 lg:py-32">
       <AmbientBlobs />
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">

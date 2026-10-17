@@ -41,7 +41,7 @@ const speakingRoles = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative overflow-hidden bg-ivory-200/50 py-24 lg:py-32">
+    <section id="services" className="relative overflow-hidden bg-ivory-200/58 py-24 lg:py-32">
       <AmbientBlobs tone="light" />
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="text-center">

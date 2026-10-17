@@ -123,7 +123,7 @@ const whyClients = [
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden bg-ivory-100">
+    <section id="about" className="relative overflow-hidden bg-ivory-100/85">
       {/* ================================================================ */}
       {/* Section 1 — Premium Introduction ("Meet Nisha")                  */}
       {/* ================================================================ */}
@@ -276,7 +276,7 @@ export default function About() {
       {/* ================================================================ */}
       {/* Section 3 — Her Approach                                          */}
       {/* ================================================================ */}
-      <div className="relative overflow-hidden bg-plum-300 py-24 lg:py-32">
+      <div className="relative overflow-hidden bg-plum-300/78 py-24 lg:py-32">
         <AmbientBlobs />
 
         <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
@@ -331,7 +331,7 @@ export default function About() {
       {/* ================================================================ */}
       {/* Section 4 — Why Clients Choose Nisha                              */}
       {/* ================================================================ */}
-      <div className="relative overflow-hidden bg-ivory-200/50 py-24 lg:py-32">
+      <div className="relative overflow-hidden bg-ivory-200/62 py-24 lg:py-32">
         <div className="absolute left-10 top-10 h-72 w-72 rounded-full bg-lavender-200/30 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
@@ -367,7 +367,7 @@ export default function About() {
       {/* ================================================================ */}
       {/* Section 5 — Personal Side of Nisha                                */}
       {/* ================================================================ */}
-      <div className="relative overflow-hidden bg-ivory-100 py-24 lg:py-32">
+      <div className="relative overflow-hidden bg-ivory-100/78 py-24 lg:py-32">
         <div className="relative mx-auto max-w-5xl px-5 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">

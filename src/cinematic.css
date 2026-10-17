@@ -1,0 +1,45 @@
+/* Art direction layer: carries the sunrise palette from the hero into the 3D journey. */
+section#home {
+  background: radial-gradient(circle at 72% 12%, rgba(255, 239, 200, .72) 0%, rgba(217, 230, 216, .82) 25%, transparent 54%), linear-gradient(180deg, #d3e3d2 0%, #dfead9 55%, #e9f1e4 100%) !important;
+}
+
+section#home > .absolute.inset-0::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 18rem;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, rgba(233, 241, 228, .72) 70%, #e9f1e4 100%);
+}
+
+.sanctuary-experience { margin-top: -1px; }
+.sanctuary-experience::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  inset: 0 0 auto;
+  height: 10rem;
+  pointer-events: none;
+  background: linear-gradient(180deg, #e9f1e4 0%, rgba(233, 241, 228, .72) 36%, transparent 100%);
+}
+
+.sanctuary-copy { z-index: 4; }
+
+.sanctuary-stage-label { animation: sanctuaryStageIn .7s ease-out both; }
+@keyframes sanctuaryStageIn {
+  from { opacity: 0; transform: translateY(6px); letter-spacing: .3em; }
+  to { opacity: 1; transform: none; }
+}
+
+/* On phones the card sits under the navbar, leaving the meditators visible below. */
+@media (max-width: 640px) {
+  .sanctuary-copy { top: 6.5rem; transform: none; }
+  .sanctuary-copy > div { padding: 1.4rem 1.5rem; }
+  .sanctuary-copy h2 { font-size: 2.6rem; }
+  .sanctuary-copy h2 + p { font-size: .875rem; margin-top: .75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sanctuary-experience canvas { opacity: .94; }
+  .sanctuary-stage-label { animation: none; }
+}

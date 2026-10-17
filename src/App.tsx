@@ -6,14 +6,18 @@ import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import SiteAtmosphere from '@/components/SiteAtmosphere';
+import SanctuaryExperience from '@/components/SanctuaryExperience';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-ivory-100">
+    <div className="relative isolate min-h-screen overflow-clip bg-ivory-100">
+      <SiteAtmosphere />
       <Navbar />
-      <main>
-        <Hero />
-        <About />
+      <main className="relative z-10">
+          <Hero />
+          <SanctuaryExperience />
+          <About />
         <Services />
         <Testimonials />
         <Contact />

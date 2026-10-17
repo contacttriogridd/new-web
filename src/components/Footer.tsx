@@ -115,7 +115,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="relative overflow-hidden bg-plum-300 text-plum-900">
+      <footer className="relative z-10 overflow-hidden bg-plum-300/82 text-plum-900">
         <div className="h-px w-full bg-gradient-to-r from-transparent via-plum-800/40 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">

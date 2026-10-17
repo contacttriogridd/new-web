@@ -23,7 +23,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative overflow-hidden bg-lavender-50 py-24 lg:py-32">
+    <section id="testimonials" className="relative overflow-hidden bg-lavender-50/72 py-24 lg:py-32">
       <AmbientBlobs tone="light" />
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
